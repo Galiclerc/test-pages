@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Prompt</title>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="" />
+      <nav class="nav">
+        <ul class="navBar">
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="../index.html">Inicio</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./alert.html">Alert</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./confirm.html">Confirm</a>
+          </li>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./drag-drop.html">Drag & Drop</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./drag-file.html">Drag file</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./popover.html">Popover</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="#">Prompt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="">
+      <div class="alert-container">
+        <button id="btn" class="alert-btn">Click acá!</button>
+      </div>
+      <div class="confirm">
+        <span id="aviso" class="span-confirm"></span>
+      </div>
+    </main>
+    <script type="module">
+      const btn = document.getElementById("btn");
+      const span = document.getElementById("aviso");
+      btn.addEventListener("click", () => {
+        let aviso = prompt("Esto es un prompt. Por favor ingresa tu nombre: ");
+        let nombre = aviso;
+        span.innerText = `Hola ${nombre}! que bueno que estés aquí!`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Popover</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="">
+        <nav class="nav">
+            <ul class="navBar">
+                <li class="navBar-item"><a class="navBar-item-a" href="../index.html">Inicio</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./alert.html">Alert</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./confirm.html">Confirm</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-drop.html">Drag & Drop</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-file.html">Drag file</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="#">Popover</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./prompt.html">Prompt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="alert-container">
+            <button id="mi-boton" class="alert-btn"> Click acá!</button>
+            
+        </div>
+       
+    
+    <div id="mi-popover" class="popover">     
+        <span id="close-popover" class="close-button-popover">&times;</span>
+        <p>Contenido del Popover</p>
+    </div>
+</main>
+    <script>
+        document.getElementById('mi-boton').addEventListener('click', function() {
+            var popover = document.getElementById('mi-popover');
+            popover.style.display = 'block';
+
+            document.getElementById('close-popover').addEventListener('click', function() {
+                popover.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

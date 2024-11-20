@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Drag & Drop</title>
+</head>
+
+
+<body>
+    <header class="header">
+        <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="">
+        <nav class="nav">
+            <ul class="navBar">
+                <li class="navBar-item"><a class="navBar-item-a" href="../index.html">Inicio</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./alert.html">Alert</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./confirm.html">Confirm</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="#">Drag & Drop</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-file.html">Drag file</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./popover.html">Popover</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./prompt.html">Prompt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    <fieldset id="origen" class="container" onDrop="dropItem(this, event)" onDragEnter="return false" onDragOver="return false">
+        <legend><b>Contenedor Origen</b>: Coge y arrastra un elemento al contenedor DESTINO</legend>
+        <a draggable="true" onDragStart="dragItem(this, event)" class="item" id="Item1">Elemento 1</a>
+        <a draggable="true" onDragStart="dragItem(this, event)" class="item red" id="Item2">Elemento 2</a>
+        <a draggable="true" onDragStart="dragItem(this, event)" class="item orange" id="Item3">Elemento 3</a>
+    </fieldset>
+    <fieldset id="destino" class="container" onDrop="dropItem(this, event)" onDragEnter="return false" onDragOver="return false">
+        <legend><b>Contenedor DESTINO</b>: Suelta el elemento aquí</legend>
+    </fieldset>
+
+</main>
+      <script type="text/javascript">
+        function dragItem(item, event) {
+            event.dataTransfer.setData('Identificador de Objeto', item.id)
+        }
+    
+        function dropItem(target, event) {
+            var item = event.dataTransfer.getData('Identificador de Objeto');
+            target.appendChild(document.getElementById(item));
+        }
+    </script>
+</body>
+</html>

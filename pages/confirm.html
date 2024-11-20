@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Confirm</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="">
+        <nav class="nav">
+            <ul class="navBar">
+                <li class="navBar-item"><a class="navBar-item-a" href="../index.html">Inicio</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./alert.html">Alert</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="#">Confirm</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-drop.html">Drag & Drop</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-file.html">Drag file</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./popover.html">Popover</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./prompt.html">Prompt</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./solapas.html">Solapas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main >
+        <div class="alert-container">
+        <button id="btn" class="alert-btn"> Click acá!</button>
+        
+    </div>
+    <div class="confirm">
+        <span id="confirm" class="span-confirm"></span>
+    </div>
+    </main>
+<script type="module">
+    const btn = document.getElementById('btn')
+    const span = document.getElementById('confirm')
+    btn.addEventListener('click', ()=>{
+       let confirmacion = confirm('Esto es un Confirm')
+        if(confirmacion === true){
+       span.innerText ='Hiciste click en aceptar'
+        
+    }else{
+        span.innerText = 'Hiciste click en cancelar'
+    }
+    })
+
+</script>
+</body>
+</html>

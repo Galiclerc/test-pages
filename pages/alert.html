@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Alert</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="">
+        <nav class="nav">
+            <ul class="navBar">
+                <li class="navBar-item"><a class="navBar-item-a" href="../index.html">Inicio</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="#">Alert</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./confirm.html">Confirm</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-drop.html">Drag & Drop</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./drag-file.html">Drag file</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./popover.html">Popover</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./prompt.html">Prompt</a></li>
+                <li class="navBar-item"><a class="navBar-item-a" href="./solapas.html">Solapas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="">
+        <div class="alert-container">
+        <button id="btn" class="alert-btn"> Click acá!</button>
+    </div>
+    </main>
+<script type="module">
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', ()=>{
+        window.alert('Esto es un Alert')
+    })
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Drag file</title>
+    <style>
+      .drop-area {
+        width: 300px;
+        height: 200px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        line-height: 200px;
+        margin: 20px auto;
+      }
+
+      .drop-area.dragging {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="../assets/img/Logo-Galiclerc.png" alt="" />
+      <nav class="nav">
+        <ul class="navBar">
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="../index.html">Inicio</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./alert.html">Alert</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./confirm.html">Confirm</a>
+          </li>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./drag-drop.html">Drag & Drop</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="#">Drag file</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./popover.html">Popover</a>
+          </li>
+          <li class="navBar-item">
+            <a class="navBar-item-a" href="./prompt.html">Prompt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="drop-area" id="dropArea">
+        Arrastra y suelta el archivo aquí
+      </div>
+      <div class="confirm">
+        <span id="confirm" class="span-confirm"></span>
+    </div>
+    </main>
+    <script>
+      var dropArea = document.getElementById("dropArea");
+      const span = document.getElementById('confirm')
+
+      // Evitar el comportamiento predeterminado del navegador al arrastrar y soltar
+      dropArea.addEventListener("dragenter", preventDefault, false);
+      dropArea.addEventListener("dragleave", preventDefault, false);
+      dropArea.addEventListener("dragover", preventDefault, false);
+      dropArea.addEventListener("drop", preventDefault, false);
+
+      function preventDefault(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      // Cambiar el aspecto de la zona de soltar cuando se arrastra un archivo encima
+      dropArea.addEventListener(
+        "dragenter",
+        function () {
+          dropArea.classList.add("dragging");
+        },
+        false
+      );
+
+      dropArea.addEventListener(
+        "dragleave",
+        function () {
+          dropArea.classList.remove("dragging");
+        },
+        false
+      );
+
+      // Manejar el evento de soltar archivo
+      dropArea.addEventListener("drop", handleDrop, false);
+
+      function handleDrop(e) {
+        let files = e.dataTransfer.files;
+        if (files.length > 0) {
+          const file = files[0];
+          // Aquí puedes agregar tu lógica para manejar el archivo
+        }
+        
+
+        dropArea.classList.remove("dragging");
+      }
+    </script>
+  </body>
+</html>
